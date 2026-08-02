@@ -85,6 +85,9 @@ a:hover { color: var(--primary-hover); text-decoration: underline; }
     background-color: var(--border-color); 
     border: 2px solid var(--border-color); 
     border-radius: 4px;
+    
+    /* Chìa khóa: Căn giữa an toàn khi đủ không gian, nhường quyền cho scroll khi bị tràn */
+    margin: 0 auto; 
 }
 .cell { 
     background-color: var(--card-bg); 
