@@ -183,7 +183,7 @@ function PlacePiece(r, c) {
     moveStack.Push(new Point(r, c, currentPlayer));
     
     const playerNameUI = currentPlayer === 1 ? 'X' : 'O';
-    LogMessage(`PUSH: Người chơi ${playerNameUI} đánh tại (${r} + 1, ${c} + 1)`, 'log-success');
+    LogMessage(`PUSH: Người chơi ${playerNameUI} đánh tại (${r + 1}, ${c + 1})`, 'log-success');
 
     // Kiểm tra ngay xem nước đi vừa rồi có tạo ra chiến thắng không
     if (CheckWin(r, c, currentPlayer)) {
