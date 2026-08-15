@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caro Lite</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Lưới background tương tác -->
     <div id="grid-background-overlay"></div>
 
-    <nav class="navigation">
-        <a href="#" class="logo">Caro Lite</a>
-        <ul>
-            <li><a href="#" class="active">Chơi Game</a></li>
-            <li><a href="#">Lịch sử</a></li>
-        </ul>
-    </nav>
-
     <main class="container">
+        <!--Thanh Navigation-->
+        <nav class="navigation">
+            <a href="#" class="logo">Caro Lite</a>
+            <ul>
+                <li><a href="#" class="active">Chơi Game</a></li>
+                <li><a href="https://thanhvanhoccode.github.io/Binary-Search-Visualizer/">Hệ sinh thái</a></li>
+            </ul>
+        </nav>
         <header class="header">
             <h1>Caro Lite</h1>
-            <p>Thuật toán Stack O(1) & Lerp Background</p>
+            <p>Thuật toán Stack</p>
         </header>
-        
+
         <div class="content-card">
             <h2>Bàn Cờ</h2>
+            <!--Thanh công cụ để chọn một số thuộc tính-->
             <div class="controls button-group" style="margin-bottom: 20px; align-items: center;">
                 <div class="form-group" style="flex-direction: row; gap: 10px; align-items: center;">
                     <label for="boardSize" style="margin: 0;">Kích thước:</label>
-                    <select id="boardSize" class="btn btn-secondary" style="background-color: var(--light-bg); color: var(--text-color); border: 1px solid var(--border-color);">
+                    <select id="boardSize" class="btn btn-secondary"
+                        style="background-color: var(--light-bg); color: var(--text-color); border: 1px solid var(--border-color);">
                         <option value="3">Nhỏ (3x3)</option>
                         <option value="15" selected>Tiêu chuẩn (15x15)</option>
                         <option value="19">Lớn (19x19)</option>
@@ -38,15 +42,28 @@
                 <button id="btnUndo" class="btn btn-primary">Undo</button>
                 <button id="btnReset" class="btn btn-danger">Reset</button>
             </div>
-            
+
             <h3 id="status" style="color: var(--primary-color);">Lượt của: X</h3>
-            
-            <div id="board-container" style="display: flex; overflow: auto; padding: 10px 0;">
+
+            <div id="board-container" style="display: flex; justify-content: center; overflow: auto; padding: 10px 0;">
                 <div id="board" class="board"></div>
+            </div>
+
+            <div style="text-align: center; margin-top: 15px;">
+                <button id="btnToggleLog" class="btn btn-secondary" style="font-family: monospace;">>_ Toggle
+                    Terminal</button>
+            </div>
+
+            <!-- Giao diện CMD ẩn mặc định -->
+            <div id="log-area" style="display: none;">
+                <div id="log-output">
+                    <p class="placeholder-text">Hệ thống sẵn sàng. Bắt đầu ghi log...</p>
+                </div>
             </div>
         </div>
     </main>
 
     <script src="script.js"></script>
 </body>
+
 </html>
