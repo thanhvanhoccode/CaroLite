@@ -183,7 +183,7 @@ function PlacePiece(r, c) {
     moveStack.Push(new Point(r, c, currentPlayer));
     
     const playerNameUI = currentPlayer === 1 ? 'X' : 'O';
-    LogMessage(`PUSH: Người chơi ${playerNameUI} đánh tại (${r}, ${c})`, 'log-success');
+    LogMessage(`PUSH: Người chơi ${playerNameUI} đánh tại (${r} + 1, ${c} + 1)`, 'log-success');
 
     // Kiểm tra ngay xem nước đi vừa rồi có tạo ra chiến thắng không
     if (CheckWin(r, c, currentPlayer)) {
@@ -219,7 +219,7 @@ function Undo() {
     
     // Mapping ngược để lấy tên hiển thị UI với chi phí O(1)
     const playerNameUI = lastMove.playerID === 1 ? 'X' : 'O';
-    LogMessage(`POP (Undo): Rút nước đi của ${playerNameUI} tại (${lastMove.x}, ${lastMove.y})`, 'log-error');
+    LogMessage(`POP (Undo): Rút nước đi của ${playerNameUI} tại (${lastMove.x + 1}, ${lastMove.y + 1})`, 'log-error');
 
     // Rollback trạng thái: Xóa logic trong ma trận và xóa hiển thị DOM
     boardMatrix[lastMove.x][lastMove.y] = 0;
